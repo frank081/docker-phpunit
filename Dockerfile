@@ -2,6 +2,9 @@ FROM php:5.6-alpine
 
 # phpunit
 ENV PHPUNIT_VERSION 4.8
+
+RUN apk --no-cache add openssl
+
 RUN mkdir -p /root/src \
     && cd /root/src \
     && wget https://phar.phpunit.de/phpunit-${PHPUNIT_VERSION}.phar \
