@@ -5,10 +5,11 @@ ENV PHPUNIT_VERSION 4.8
 RUN mkdir -p /root/src \
     && cd /root/src \
     && wget https://phar.phpunit.de/phpunit-${PHPUNIT_VERSION}.phar \
-    && chmod +x phpunit-${PHPUNIT_VERSION}.phar \
-    && mv phpunit-${PHPUNIT_VERSION}.phar /usr/local/bin/phpunit \
-    && rm -rf /root/src \
-    && phpunit --version
+    && chmod +x phpunit-${PHPUNIT_VERSION}.phar
+#    && chmod +x phpunit-${PHPUNIT_VERSION}.phar \
+#    && mv phpunit-${PHPUNIT_VERSION}.phar /usr/local/bin/phpunit \
+#    && rm -rf /root/src \
+#    && phpunit --version
 
 ENTRYPOINT ["/usr/local/bin/phpunit"]
 CMD ["--help"]
