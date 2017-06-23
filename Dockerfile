@@ -15,6 +15,3 @@ RUN mkdir -p /root/src \
     && mv phpunit-${PHPUNIT_VERSION}.phar /usr/local/bin/phpunit \
     && rm -rf /root/src \
     && phpunit --version
-
-ENTRYPOINT ["/usr/local/bin/phpunit"]
-CMD ["--help"]
