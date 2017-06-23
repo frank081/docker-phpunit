@@ -3,6 +3,9 @@ FROM php:5.6-alpine
 # phpunit
 ENV PHPUNIT_VERSION 4.8
 
+RUN apk update \
+    && apk add bash
+
 RUN apk --no-cache add openssl
 
 RUN mkdir -p /root/src \
