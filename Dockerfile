@@ -8,7 +8,7 @@ RUN apk update \
 
 RUN apk --no-cache add openssl \
     git \
-    openssh \
+    openssh
 
 RUN echo "date.timezone = America/New_York" > /usr/local/etc/php/php.ini
 
