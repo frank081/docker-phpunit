@@ -6,7 +6,9 @@ ENV PHPUNIT_VERSION 4.8
 RUN apk update \
     && apk add bash
 
-RUN apk --no-cache add openssl
+RUN apk --no-cache add openssl \
+    git \
+    openssh \
 
 RUN echo "date.timezone = America/New_York" > /usr/local/etc/php/php.ini
 
