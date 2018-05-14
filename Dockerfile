@@ -4,11 +4,13 @@ FROM php:5.6-alpine
 ENV PHPUNIT_VERSION 4.8
 
 RUN apk update \
-    && apk add bash
-
-RUN apk --no-cache add openssl \
+    && apk --no-cache add bash \
+    openssl \
     git \
-    openssh
+    openssh \
+    && pecl install xdebug-2.2.7
+RUN 
+    
 
 RUN echo "date.timezone = America/New_York" > /usr/local/etc/php/php.ini
 
