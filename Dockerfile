@@ -6,6 +6,7 @@ ENV PHPUNIT_VERSION 4.8
 RUN apk update \
     && apk add --update --virtual autoconf \
     && apk --no-cache add bash \
+    build-base \
     openssl \
     git \
     openssh \
