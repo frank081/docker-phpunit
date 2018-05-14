@@ -4,6 +4,7 @@ FROM php:5.6-alpine
 ENV PHPUNIT_VERSION 4.8
 
 RUN apk update \
+    && apk add --update --virtual autoconf \
     && apk --no-cache add bash \
     openssl \
     git \
