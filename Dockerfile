@@ -10,7 +10,7 @@ RUN apk update \
     openssl \
     git \
     openssh \
-    && pecl install xdebug-2.2.7
+    && printf "yes\n" | pecl install xdebug-2.2.7
 RUN 
     
 
