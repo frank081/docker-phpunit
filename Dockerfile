@@ -14,7 +14,7 @@ RUN apk update \
 #    && docker-php-ext-enable xdebug
 #RUN 
 RUN apk add --no-cache $PHPIZE_DEPS \
-	&& pecl install xdebug-2.2.7 \
+	&& pecl install xdebug-2.5.5 \
 	&& docker-php-ext-enable xdebug
     
 
