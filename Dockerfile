@@ -9,10 +9,13 @@ RUN apk update \
     build-base \
     openssl \
     git \
-    openssh \
-    && yes | pecl install xdebug-2.2.7 \
-    && docker-php-ext-enable xdebug
-RUN 
+    openssh #\
+#    && yes | pecl install xdebug-2.2.7 \
+#    && docker-php-ext-enable xdebug
+#RUN 
+RUN apk add --no-cache $PHPIZE_DEPS \
+	&& pecl install xdebug-2.2.7 \
+	&& docker-php-ext-enable xdebug
     
 
 RUN echo "date.timezone = America/New_York" > /usr/local/etc/php/php.ini
