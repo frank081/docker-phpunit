@@ -18,7 +18,7 @@ RUN apk add --no-cache $PHPIZE_DEPS \
 	&& docker-php-ext-enable xdebug
     
 
-RUN echo "date.timezone = America/New_York" > /usr/local/etc/php/php.ini
+RUN echo "date.timezone = America/New_York" >> /usr/local/etc/php/php.ini
 
 RUN mkdir -p /root/src \
     && cd /root/src \
