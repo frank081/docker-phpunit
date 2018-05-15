@@ -10,7 +10,8 @@ RUN apk update \
     openssl \
     git \
     openssh \
-    && printf "yes\n" | pecl install xdebug-2.2.7
+    && printf "yes\n" | pecl install xdebug-2.2.7 \
+    && docker-php-ext-enable xdebug
 RUN 
     
 
