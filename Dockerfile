@@ -1,6 +1,6 @@
 FROM php:5.6-alpine
 
-# phpunit
+# phpunit version
 ENV PHPUNIT_VERSION 4.8
 
 RUN apk update \
@@ -13,13 +13,16 @@ RUN apk update \
 #    && yes | pecl install xdebug-2.2.7 \
 #    && docker-php-ext-enable xdebug
 
+# Setup php.ini file
+RUN pecl config-set php_ini /etc/php5/apache2/php.ini \
+	&& echo "date.timezone = America/New_York" >> /usr/local/etc/php/php.ini
+
+# Install xdebug
 RUN apk add --no-cache $PHPIZE_DEPS \
 	&& pecl install xdebug-2.5.5 \
 	&& docker-php-ext-enable xdebug
-    
 
-RUN echo "date.timezone = America/New_York" >> /usr/local/etc/php/php.ini
-
+# Install phpunit
 RUN mkdir -p /root/src \
     && cd /root/src \
     && wget https://phar.phpunit.de/phpunit-${PHPUNIT_VERSION}.phar \
