@@ -11,12 +11,9 @@ RUN apk update \
     openssl \
     git \
     openssh
-#    && yes | pecl install xdebug-2.2.7 \
-#    && docker-php-ext-enable xdebug
 
 # Setup php.ini file
-#RUN pecl config-set php_ini /usr/local/etc/php/php.ini
-#	&& echo "zend_extension=/usr/local/lib/php/extensions/no-debug-non-zts-20131226/xdebug.s" >> /usr/local/etc/php/php.ini \
+# Set timeszone for test that use date
 RUN echo "date.timezone = America/New_York" >> /usr/local/etc/php/php.ini
 
 # Install xdebug
