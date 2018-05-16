@@ -15,6 +15,7 @@ RUN apk update \
 
 # Setup php.ini file
 RUN pecl config-set php_ini /usr/local/etc/php/php.ini \
+	&& exho "zend_extension=/usr/local/lib/php/extensions/no-debug-non-zts-20131226/xdebug.s" >> /usr/local/etc/php/php.ini
 	&& echo "date.timezone = America/New_York" >> /usr/local/etc/php/php.ini
 
 # Install xdebug
