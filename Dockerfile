@@ -14,7 +14,7 @@ RUN apk update \
 #    && docker-php-ext-enable xdebug
 
 # Setup php.ini file
-RUN pecl config-set php_ini /etc/php5/apache2/php.ini \
+RUN pecl config-set php_ini /usr/local/etc/php/php.ini \
 	&& echo "date.timezone = America/New_York" >> /usr/local/etc/php/php.ini
 
 # Install xdebug
