@@ -15,9 +15,9 @@ RUN apk update \
 #    && docker-php-ext-enable xdebug
 
 # Setup php.ini file
-RUN pecl config-set php_ini /usr/local/etc/php/php.ini \
-	&& echo "zend_extension=/usr/local/lib/php/extensions/no-debug-non-zts-20131226/xdebug.s" >> /usr/local/etc/php/php.ini \
-	&& echo "date.timezone = America/New_York" >> /usr/local/etc/php/php.ini
+RUN pecl config-set php_ini /usr/local/etc/php/php.ini
+#	&& echo "zend_extension=/usr/local/lib/php/extensions/no-debug-non-zts-20131226/xdebug.s" >> /usr/local/etc/php/php.ini \
+#	&& echo "date.timezone = America/New_York" >> /usr/local/etc/php/php.ini
 
 # Install xdebug
 RUN apk add --no-cache $PHPIZE_DEPS \
