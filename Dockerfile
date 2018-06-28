@@ -44,5 +44,5 @@ RUN mkdir -p /root/src \
     && mkdir /usr/phpcs_standards \
     && git clone https://github.com/wimg/PHPCompatibility.git /usr/phpcs_standards/PHPCompatibility \
     && rm -rf /root/src \
-    && phpcs –-config-set installed_paths /usr/phpcs_standards/PHPCompatibility \
+    && phpcs --config-set installed_paths /usr/phpcs_standards/PHPCompatibility \
     && phpcs -i
