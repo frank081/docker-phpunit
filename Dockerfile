@@ -33,7 +33,7 @@ RUN mkdir -p /root/src \
 # Install PHP Code Sniffer
 RUN mkdir -p /root/src \
     && cd /root/src \
-    wget https://squizlabs.github.io/PHP_CodeSniffer/phpcs.phar \
+    && wget https://squizlabs.github.io/PHP_CodeSniffer/phpcs.phar \
     && wget https://squizlabs.github.io/PHP_CodeSniffer/phpcbf.phar \
     && chmod +x phpcs.phar \
     && chmod +x phpcbf.phar \
