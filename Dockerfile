@@ -41,4 +41,8 @@ RUN mkdir -p /root/src \
     && mv phpcbf.phar /usr/local/bin/phpcbf \
     && rm -rf /root/src \
     && phpcs --version \
-    && phpcbf --version
+    && phpcbf --version \
+    && sudo mkdir /usr/phpcs_standards \
+    && sudo git clone https://github.com/wimg/PHPCompatibility.git /usr/phpcs_standards/PHPCompatibility \
+    && phpcs –-config-set installed_paths /usr/phpcs_standards/PHPCompatibility \
+    && phpcs -i
