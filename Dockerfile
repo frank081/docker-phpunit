@@ -39,10 +39,10 @@ RUN mkdir -p /root/src \
     && chmod +x phpcbf.phar \
     && mv phpcs.phar /usr/local/bin/phpcs \
     && mv phpcbf.phar /usr/local/bin/phpcbf \
-    && rm -rf /root/src \
     && phpcs --version \
     && phpcbf --version \
     && mkdir /usr/phpcs_standards \
     && git clone https://github.com/wimg/PHPCompatibility.git /usr/phpcs_standards/PHPCompatibility \
+    && rm -rf /root/src \
     && phpcs –-config-set installed_paths /usr/phpcs_standards/PHPCompatibility \
     && phpcs -i
