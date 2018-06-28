@@ -37,8 +37,8 @@ RUN mkdir -p /root/src \
     && wget https://squizlabs.github.io/PHP_CodeSniffer/phpcbf.phar \
     && chmod +x phpcs.phar \
     && chmod +x phpcbf.phar \
-    && mv phpcs.phar /usr/local/bin/phpsniffers \
-    && mv phpcbf.phar /usr/local/bin/phpsniffers \
+    && mv phpcs.phar /usr/local/bin/phpcs \
+    && mv phpcbf.phar /usr/local/bin/phpcbf \
     && rm -rf /root/src \
     && phpcs --version \
     && phpcbf --version
