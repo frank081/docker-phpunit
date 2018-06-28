@@ -29,3 +29,16 @@ RUN mkdir -p /root/src \
     && mv phpunit-${PHPUNIT_VERSION}.phar /usr/local/bin/phpunit \
     && rm -rf /root/src \
     && phpunit --version
+
+# Install PHP Code Sniffer
+RUN mkdir -p /root/src \
+    && cd /root/src \
+    wget https://squizlabs.github.io/PHP_CodeSniffer/phpcs.phar \
+    && wget https://squizlabs.github.io/PHP_CodeSniffer/phpcbf.phar \
+    && chmod +x phpcs.phar \
+    && chmod +x phpcbf.phar \
+    && mv phpcs.phar /usr/local/bin/phpsniffers \
+    && mv phpcbf.phar /usr/local/bin/phpsniffers \
+    && rm -rf /root/src \
+    && phpcs --version
+    && phpcbf --version
