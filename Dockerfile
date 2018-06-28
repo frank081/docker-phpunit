@@ -40,5 +40,5 @@ RUN mkdir -p /root/src \
     && mv phpcs.phar /usr/local/bin/phpsniffers \
     && mv phpcbf.phar /usr/local/bin/phpsniffers \
     && rm -rf /root/src \
-    && phpcs --version
+    && phpcs --version \
     && phpcbf --version
