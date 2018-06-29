@@ -65,7 +65,7 @@ RUN mkdir -p /root/src \
     && phpcs-2.9.1 --version \
     && phpcbf-2.9.1 --version \
     && mkdir -p /usr/phpcs_standards \
-    && git clone --branch 7.x-2.x https://git.drupal.org/project/coder.git /usr/phpcs_standards/coder/coder_sniffer \
+    && git clone --branch 7.x-2.x https://git.drupal.org/project/coder.git /usr/phpcs_standards/coder/ \
     && rm -rf /root/src \
     && phpcs-2.9.1 --config-set installed_paths /usr/phpcs_standards/coder/coder_sniffer/ \
     && phpcs-2.9.1 -i
