@@ -54,7 +54,7 @@ RUN mkdir -p /root/src \
     && cd /root/src \
     && git clone https://github.com/squizlabs/PHP_CodeSniffer.git \
     && cd PHP_CodeSniffer \
-    && git checkout tags/2.9.1
+    && git checkout tags/2.9.1 \
     && chmod +x scripts/phpcs \
     && chmod +x scripts/phpcbf \
     && mv scripts/phpcs /usr/local/bin/phpcs-2.9.1 \
