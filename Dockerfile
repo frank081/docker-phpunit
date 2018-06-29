@@ -60,8 +60,8 @@ RUN mkdir -p /root/src \
     && php build-phar.php \
     && chmod +x phpcs.phar \
     && chmod +x phpcbf.phar \
-    && mv scripts/phpcs.phar /usr/local/phpcs-2.9.1 \
-    && mv scripts/phpcbf.phar /usr/local/phpcbf-2.9.1 \
+    && mv phpcs.phar /usr/local/phpcs-2.9.1 \
+    && mv phpcbf.phar /usr/local/phpcbf-2.9.1 \
     && phpcs-2.9.1 --version \
     && phpcbf-2.9.1 --version \
     && mkdir -p /usr/phpcs_standards \
