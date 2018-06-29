@@ -46,5 +46,5 @@ RUN mkdir -p /root/src \
     && git clone --branch 7.x-2.x https://git.drupal.org/project/coder.git /usr/phpcs_standards/coder/coder_sniffer \
     && rm -rf /root/src \
     && phpcs --config-set installed_paths /usr/phpcs_standards/PHPCompatibility \
-    && phpcs --config-set installed_paths /usr/phpcs_standards/coder/coder_sniffer \
+#    && phpcs --config-set installed_paths /usr/phpcs_standards/coder/coder_sniffer \
     && phpcs -i
