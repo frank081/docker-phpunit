@@ -55,10 +55,13 @@ RUN mkdir -p /root/src \
     && git clone https://github.com/squizlabs/PHP_CodeSniffer.git \
     && cd PHP_CodeSniffer \
     && git checkout tags/2.9.1 \
-    && chmod +x scripts/phpcs \
-    && chmod +x scripts/phpcbf \
-    && mv scripts/phpcs /usr/local/bin/phpcs-2.9.1 \
-    && mv scripts/phpcbf /usr/local/bin/phpcbf-2.9.1 \
+    && cd scripts \
+    && echo "phar.readonly = 0" >> /usr/local/etc/php/php.ini \
+    && php build-phar.php \
+    && chmod +x phpcs.phar \
+    && chmod +x phpcbf.phar \
+    && mv scripts/phpcs /usr/local/phpcs-2.9.1 \
+    && mv scripts/phpcbf /usr/local/phpcbf-2.9.1 \
     && phpcs-2.9.1 --version \
     && phpcbf-2.9.1 --version \
     && mkdir -p /usr/phpcs_standards \
